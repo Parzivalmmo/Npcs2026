@@ -3,135 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeMMO - Mamoswine Trainer Rerun Guide</title>
+    <title>SISTEMA DE NAVEGACIÓN: MAMOSWINE RERUN</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --accent-blue: #38bdf8;
-            --accent-red: #ef4444;
-            --accent-green: #4ade80;
-            --border: #334155;
+            --bg-cyber: #030712;
+            --panel-bg: rgba(17, 24, 39, 0.85);
+            --text-neon: #f3f4f6;
+            --text-dim: #9ca3af;
+            --neon-blue: #00f0ff;
+            --neon-purple: #bd00ff;
+            --neon-green: #39ff14;
+            --neon-red: #ff0055;
+            --border-glow: rgba(0, 240, 255, 0.2);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace, system-ui;
+            background-color: var(--bg-cyber);
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            color: var(--text-neon);
             margin: 0;
             padding: 20px;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        h1 {
+        header {
             text-align: center;
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+            background: var(--panel-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "SISTEMA ACTIVO // EN LÍNEA";
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 0.65rem;
+            color: var(--neon-green);
+            letter-spacing: 2px;
+        }
+
+        h1 {
             color: #fff;
-            font-size: 2rem;
-            margin-bottom: 5px;
+            font-size: 1.8rem;
+            margin: 10px 0 5px 0;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 0 8px var(--neon-blue);
         }
 
         .subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 30px;
+            color: var(--neon-blue);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .intro-box {
-            background: #1e293b;
-            border-left: 4px solid var(--accent-blue);
+            background: rgba(255, 0, 85, 0.05);
+            border: 1px dashed var(--neon-red);
             padding: 15px 20px;
             border-radius: 6px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            box-shadow: inset 0 0 10px rgba(ff, 0, 55, 0.1);
         }
 
         .route-section {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 25px;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .route-section:hover {
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 15px rgba(189, 0, 255, 0.2);
         }
 
         .route-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(0, 240, 255, 0.2);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
         }
 
         .route-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: #fff;
-            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .payout {
-            background-color: rgba(74, 222, 128, 0.1);
-            color: var(--accent-green);
-            padding: 4px 12px;
-            border-radius: 20px;
+            background-color: rgba(57, 255, 20, 0.1);
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            padding: 6px 14px;
+            border-radius: 4px;
             font-weight: bold;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            text-shadow: 0 0 5px var(--neon-green);
         }
 
         .badge {
             display: inline-block;
-            padding: 2px 6px;
-            font-size: 0.75rem;
+            padding: 4px 8px;
+            font-size: 0.7rem;
             font-weight: bold;
             border-radius: 4px;
-            margin-right: 5px;
-            text-transform: uppercase;
+            margin-right: 8px;
+            letter-spacing: 1px;
         }
-        .badge-fly { background-color: #8b5cf6; color: #fff; }
-        .badge-heal { background-color: #ec4899; color: #fff; }
+        .badge-fly { 
+            background-color: rgba(189, 0, 255, 0.2); 
+            color: #e5a7ff;
+            border: 1px solid var(--neon-purple);
+        }
+        .badge-heal { 
+            background-color: rgba(0, 240, 255, 0.15); 
+            color: #a3f7ff;
+            border: 1px solid var(--neon-blue);
+        }
 
         .strat {
-            background-color: rgba(239, 68, 68, 0.08);
-            border-left: 3px solid var(--accent-red);
-            padding: 10px 15px;
-            margin: 15px 0;
-            border-radius: 4px;
+            background-color: rgba(255, 0, 85, 0.08);
+            border-left: 4px solid var(--neon-red);
+            padding: 12px 18px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
         }
 
         .strat-title {
-            color: var(--accent-red);
+            color: var(--neon-red);
             font-weight: bold;
-            margin: 0 0 5px 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
         }
 
         .map-container {
             text-align: center;
-            margin-top: 15px;
-            background-color: #0b0f19;
+            margin-top: 20px;
+            background-color: #020617;
             border-radius: 8px;
-            padding: 10px;
-            border: 1px solid var(--border);
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .map-container:hover {
+            transform: scale(1.01);
+            border-color: rgba(0, 240, 255, 0.4);
         }
 
         .map-container img {
             max-width: 100%;
             height: auto;
-            border-radius: 4px;
+            border-radius: 6px;
+            filter: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         ul {
-            margin: 5px 0;
+            margin: 8px 0;
             padding-left: 20px;
+            list-style-type: '🤖 ';
         }
 
         li {
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            color: var(--text-neon);
+        }
+
+        strong {
+            color: var(--neon-blue);
         }
     </style>
 </head>
@@ -139,173 +205,175 @@
 
 <div class="container">
 
-    <h1>Cadoiz's Trainer Rerun Mamoswine Guide</h1>
-    <div class="subtitle">Ruta optimizada basada en el formato original de HolyBrocolli</div>
+    <header>
+        <h1>Mamoswine Protocol: Trainer Rerun</h1>
+        <div class="subtitle">Mapeo de Ruta Optimizado // Núcleo por HolyBrocolli</div>
+    </header>
 
     <div class="intro-box">
-        <strong>Regla general por defecto:</strong> Usa siempre <strong>Icicle Spear (Carámbanos)</strong>. Las excepciones o cambios de ataque se marcarán abajo en color rojo.
+        <span style="color:var(--neon-red); font-weight:bold;">[AVISO DEL SISTEMA]</span> Comando por defecto: Ejecutar siempre <strong>Carámbanos (Icicle Spear)</strong>. Las anulaciones críticas de comando se despliegan abajo en codificación roja.
     </div>
 
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">1. Route 9 Shopping Mall & Route 10</div>
-            <div class="payout">$12,240 + $19,464</div>
+            <div class="route-title">01 // Centro Comercial Ruta 9 & Ruta 10</div>
+            <div class="payout">CRÉDITOS: +$12,240 // +$19,464</div>
         </div>
-        <p><strong>Shopping Mall:</strong> $6120 + $6120</p>
-        <p><strong>Route 10:</strong> $4452 + $5280 + $4452 + $5280</p>
+        <p><strong>Área Comercial:</strong> $6,120 + $6,120</p>
+        <p><strong>Subsector Ruta 10:</strong> $4,452 + $5,280 + $4,452 + $5,280</p>
         <div class="map-container">
-            <img src="https://i.ibb.co/v4Vb7sWz/mapa-1.png" alt="Route 9 Mall">
+            <img src="https://i.ibb.co/v4Vb7sWz/mapa-1.png" alt="Sector Comercial 9">
         </div>
     </div>
 
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">2. Route 10 & Route 13</div>
-            <div class="payout">$16,200</div>
+            <div class="route-title">02 // Interconexión Ruta 10 & Ruta 13</div>
+            <div class="payout">CRÉDITOS: +$16,200</div>
         </div>
         <div class="strat">
-            <div class="strat-title">Estrategia:</div>
-            Usa Terremoto (EQ) contra Alomomola (entrenador marcado en rojo).
+            <div class="strat-title">[MODIFICACIÓN DE COMANDO]</div>
+            Inyectar Terremoto (EQ) contra la unidad Alomomola (vector marcado en rojo).
         </div>
-        <p><strong>Route 13:</strong> $8100 + $8100</p>
+        <p><strong>Subsector Ruta 13:</strong> $8,100 + $8,100</p>
         <div class="map-container">
-            <img src="https://i.ibb.co/G4mSgL38/mapa-2.png" alt="Route 10">
+            <img src="https://i.ibb.co/G4mSgL38/mapa-2.png" alt="Sector 10">
         </div>
-        <div class="map-container" style="margin-top: 10px;">
-            <img src="https://i.ibb.co/Y7XW2386/mapa-3.png" alt="Route 13">
+        <div class="map-container" style="margin-top: 15px;">
+            <img src="https://i.ibb.co/Y7XW2386/mapa-3.png" alt="Sector 13">
         </div>
     </div>
 
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">3. Route 214 & Route 212/215</div>
-            <div class="payout">$9,000 + $9,408</div>
+            <div class="route-title">03 // Cuadrantes Ruta 214 & Ruta 215</div>
+            <div class="payout">CRÉDITOS: +$9,000 // +$9,408</div>
         </div>
-        <p><span class="badge badge-fly">Fly</span> a Veilstone City y avanza en bici hacia el Sur a Route 214.</p>
-        <p><span class="badge badge-fly">Fly</span> de regreso a Veilstone y <span class="badge badge-heal">HEAL</span>. Luego ve a Route 215 ($4704 + $4704).</p>
+        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Ciudad Rocavelo (Veilstone) &rarr; Desplazamiento Sur por Ruta 214.</p>
+        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Retorno a Rocavelo &rarr; <span class="badge badge-heal">REINICIAR HP/PP</span>. Transición a Ruta 215 ($4,704 + $4,704).</p>
         <div class="map-container">
-            <img src="https://i.ibb.co/Y7XF66v8/mapa-4.png" alt="Route 214">
+            <img src="https://i.ibb.co/Y7XF66v8/mapa-4.png" alt="Sector 214">
         </div>
-        <div class="map-container" style="margin-top: 10px;">
-            <img src="https://i.ibb.co/VWVwZPhx/mapa-5.png" alt="Route 215">
+        <div class="map-container" style="margin-top: 15px;">
+            <img src="https://i.ibb.co/VWVwZPhx/mapa-5.png" alt="Sector 215">
         </div>
     </div>
 
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">4. Route 212 (Mansion) & Route 222</div>
-            <div class="payout">$23,880 + $6,360</div>
+            <div class="route-title">04 // Sector Mansión Ruta 212 & Ruta 222</div>
+            <div class="payout">CRÉDITOS: +$23,880 // +$6,360</div>
         </div>
-        <p><span class="badge badge-fly">Fly</span> a Hearthome City y ve al Sur a Route 212 ($6000 + $5880 + $6000 + $6000).</p>
+        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Ciudad Corazón (Hearthome) &rarr; Vector Sur por Ruta 212 ($6,000 + $5,880 + $6,000 + $6,000).</p>
         <div class="strat">
-            <div class="strat-title">Estrategia:</div>
-            Usa Terremoto (EQ) contra todos los Pokémon del entrenador en rojo.
+            <div class="strat-title">[MODIFICACIÓN DE COMANDO]</div>
+            Saturar con Terremoto (EQ) contra todos los objetivos del entrenador marcado en rojo.
         </div>
-        <p><span class="badge badge-fly">Fly</span> a Sunyshore City y ve al Oeste a Route 222 ($6360).</p>
+        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Ciudad Marina (Sunyshore) &rarr; Vector Oeste por Ruta 222 ($6,360).</p>
         <div class="map-container">
-            <img src="https://i.ibb.co/wZpXQ0yK/mapa-6.png" alt="Route 212 Mansion">
+            <img src="https://i.ibb.co/wZpXQ0yK/mapa-6.png" alt="Mansión 212">
         </div>
     </div>
 
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">5. Route 222 & Route 226</div>
-            <div class="payout">$5,568</div>
+            <div class="route-title">05 // Zonas Costeras Ruta 222 & Ruta 226</div>
+            <div class="payout">CRÉDITOS: +$5,568</div>
         </div>
-        <p><span class="badge badge-fly">Fly</span> a Survival Area y avanza al Este hacia Route 226 ($5568).</p>
+        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Zona de Sobrevivencia (Survival Area) &rarr; Vector Este hacia Ruta 226 ($5,568).</p>
         <div class="map-container">
-            <img src="https://i.ibb.co/v4bYV2wX/mapa-7.png" alt="Route 222 Coast">
+            <img src="https://i.ibb.co/v4bYV2wX/mapa-7.png" alt="Costa 222">
         </div>
-        <div class="map-container" style="margin-top: 10px;">
-            <img src="https://i.ibb.co/99XWfXqy/mapa-8.png" alt="Route 226">
+        <div class="map-container" style="margin-top: 15px;">
+            <img src="https://i.ibb.co/99XWfXqy/mapa-8.png" alt="Sector 226">
         </div>
     </div>
 
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">6. Route 225</div>
-            <div class="payout">$5,472 + $5,472 + $5,472 + $5,220</div>
+            <div class="route-title">06 // Cuadrante Ruta 225</div>
+            <div class="payout">CRÉDITOS: +$21,636 TOT</div>
         </div>
-        <p><span class="badge badge-fly">Fly</span> de nuevo a Survival Area &rarr; <span class="badge badge-heal">HEAL</span> &rarr; Route 225.</p>
+        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Zona de Sobrevivencia &rarr; <span class="badge badge-heal">REINICIAR HP/PP</span> &rarr; Ruta 225.</p>
         <div class="strat">
-            <div class="strat-title">Estrategia:</div>
+            <div class="strat-title">[CÓDIGOS DE COMBATE INDIVIDUAL]</div>
             <ul>
-                <li><strong>Entrenador 1:</strong> Fuerza Bruta (Superpower) a Aggron y Hariyama (tiene Globo Helio).</li>
-                <li><strong>Entrenador 2:</strong> Terremoto (EQ) contra Miltank.</li>
+                <li><strong>Entrenador 1:</strong> Dirigir Fuerza Bruta (Superpower) hacia Aggron y Hariyama (Alerta: Globo Helio activo).</li>
+                <li><strong>Entrenador 2:</strong> Desplegar Terremoto (EQ) contra Miltank.</li>
             </ul>
         </div>
         <div class="map-container">
-            <img src="https://i.ibb.co/ksgNfMby/mapa-9.png" alt="Route 225">
+            <img src="https://i.ibb.co/ksgNfMby/mapa-9.png" alt="Sector 225">
         </div>
     </div>
 
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">7. Route 210 (Foggy Area)</div>
-            <div class="payout">$6,240 + $4896 + $6000 + $4800</div>
+            <div class="route-title">07 // Ruta 210 // Anomalía de Niebla</div>
+            <div class="payout">CRÉDITOS: +$21,936 TOT</div>
         </div>
-        <p><span class="badge badge-fly">Fly</span> a Celestic Town y ve al Este. Recuerda usar <strong>Defog</strong> antes de la primera batalla.</p>
+        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Pueblo Celestic &rarr; Vector Este. Requisito: Iniciar protocolo <strong>Despejar (Defog)</strong> pre-combate.</p>
         <div class="strat">
-            <div class="strat-title">Combate Doble (Rojo):</div>
-            Icicle spear a Gyarados y Raichu (Globo Helio), Terremoto (EQ) al resto. (*Pidgey morirá pero todo bien).
+            <div class="strat-title">[COMBATE DÚO // PROTOCOLO CRÍTICO]</div>
+            Fijar Carámbanos (Icicle Spear) en Gyarados y Raichu (Alerta: Globo Helio). Liberar Terremoto (EQ) para limpiar el resto de objetivos. (*Baja aliada: Pidgey será eliminado; daño colateral aceptable).
         </div>
         <div class="map-container">
-            <img src="https://i.ibb.co/v47wZ9yK/mapa-10.png" alt="Route 210 Fog">
+            <img src="https://i.ibb.co/v47wZ9yK/mapa-10.png" alt="Sector Niebla 210">
         </div>
     </div>
 
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">8. Route 210 North & Route 229</div>
-            <div class="payout">$7,896 + $10,944</div>
+            <div class="route-title">08 // Ruta 210 Norte & Sector Especial 229</div>
+            <div class="payout">CRÉDITOS: +$7,896 // +$10,944</div>
         </div>
-        <p><span class="badge badge-fly">Fly</span> a Solaceon Town y avanza al Norte. <strong>Combate Doble:</strong> EQ a todos.</p>
-        <p>Luego <span class="badge badge-fly">Fly</span> a Resort Area &rarr; <span class="badge badge-heal">HEAL</span> &rarr; Route 229 ($5472 + $5472).</p>
+        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Pueblo Sosiego (Solaceon) &rarr; Vector Norte. <strong>Combate Dúo:</strong> Terremoto (EQ) generalizado.</p>
+        <p>Posterior: <span class="badge badge-fly">EJECUTAR VOLAR</span> Área de Descanso &rarr; <span class="badge badge-heal">REINICIAR HP/PP</span> &rarr; Ruta 229 ($5,472 + $5,472).</p>
         <div class="map-container">
-            <img src="https://i.ibb.co/3Y7W0xXy/mapa-11.png" alt="Route 210 North">
+            <img src="https://i.ibb.co/3Y7W0xXy/mapa-11.png" alt="Sector 210 Norte">
         </div>
-        <div class="map-container" style="margin-top: 10px;">
-            <img src="https://i.ibb.co/wZ9WfbyX/mapa-12.png" alt="Route 229">
+        <div class="map-container" style="margin-top: 15px;">
+            <img src="https://i.ibb.co/wZ9WfbyX/mapa-12.png" alt="Sector 229">
         </div>
     </div>
 
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">9. Route 228 & Route 227</div>
-            <div class="payout">Tormenta de Arena</div>
+            <div class="route-title">09 // Ruta 228 // Tormenta de Arena</div>
+            <div class="payout">ENTORNO ADVERSO</div>
         </div>
-        <p>Sigue al Norte hacia Route 228 ($5664 + $5310 + $5568 + $5568). Evita al entrenador naranja.</p>
+        <p>Trayectoria Norte por Ruta 228 ($5,664 + $5,310 + $5,568 + $5,568). Restricción: Omitir firma térmica del entrenador naranja.</p>
         <div class="strat">
-            <div class="strat-title">Estrategia:</div>
+            <div class="strat-title">[ANÁLISIS DE OBJETIVOS]</div>
             <ul>
-                <li><strong>Entrenador 1:</strong> EQ a Poliwrath y Empoleon.</li>
-                <li><strong>Entrenador 2:</strong> EQ a Torkoal.</li>
-                <li><strong>Entrenador 3:</strong> EQ a Empoleon, Canto Helado (Ice Shard) a Gengar.</li>
+                <li><strong>Objetivo 1:</strong> Terremoto (EQ) para neutralizar a Poliwrath y Empoleon.</li>
+                <li><strong>Objetivo 2:</strong> Terremoto (EQ) contra Torkoal.</li>
+                <li><strong>Objetivo 3:</strong> Terremoto (EQ) contra Empoleon // Canto Helado (Ice Shard) para interceptar a Gengar.</li>
             </ul>
         </div>
         <div class="map-container">
-            <img src="https://i.ibb.co/G4XWzqNy/mapa-13.png" alt="Route 228">
+            <img src="https://i.ibb.co/G4XWzqNy/mapa-13.png" alt="Sector Arena 228">
         </div>
     </div>
 
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">10. Snowpoint City Gym (Gimnasio Inverna)</div>
-            <div class="payout">$5,940 x 6 Entrenadores</div>
+            <div class="route-title">10 // Red de Gimnasio: Ciudad Inverna</div>
+            <div class="payout">CRÉDITOS: +$5,940 POR UNIDAD</div>
         </div>
-        <p><span class="badge badge-fly">Fly</span> a Snowpoint City y <span class="badge badge-heal">HEAL</span>.</p>
+        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Ciudad Inverna (Snowpoint) &rarr; <span class="badge badge-heal">REINICIAR ESTADO</span>.</p>
         <div class="strat">
-            <div class="strat-title">Estrategia del Gimnasio:</div>
+            <div class="strat-title">[RESOLUCIÓN DE ENIGMA CRIO-DESLIZANTE]</div>
             <ul>
-                <li><strong>2do Entrenador (Rojo):</strong> Glalie ocupa Terremoto (solo bajo granizo/nieve). Gengar cae con Canto Helado (Ice Shard).</li>
-                <li><strong>4to Entrenador (Azul):</strong> Slowbro ocupa Terremoto (EQ).</li>
+                <li><strong>Hostil 2 (Rojo):</strong> Glalie activa Terremoto (sólo bajo alteración climática de Granizo). Gengar es neutralizado con Canto Helado (Ice Shard).</li>
+                <li><strong>Hostil 4 (Azul):</strong> Slowbro requiere supresión mediante Terremoto (EQ).</li>
             </ul>
         </div>
         <div class="map-container">
-            <img src="https://i.ibb.co/v4XWzMby/gym-1.png" alt="Gym Exterior">
+            <img src="https://i.ibb.co/v4XWzMby/gym-1.png" alt="Perímetro Gimnasio">
         </div>
-        <div class="map-container" style="margin-top: 10px;">
-            <img src="https://i.ibb.co/G4XWfPhy/gym-2.png" alt="Gym Puzzle Solution">
+        <div class="map-container" style="margin-top: 15px;">
+            <img src="https://i.ibb.co/G4XWfPhy/gym-2.png" alt="Matriz de Solución del Puzzle">
         </div>
     </div>
 
