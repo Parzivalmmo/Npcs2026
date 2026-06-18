@@ -3,293 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadoiz's Trainer Rerun Mamoswine Guide</title>
+    <title>Guía de Trainer Rerun - Mamoswine (Cadoiz)</title>
     <style>
+        :root {
+            --bg-color: #121824;
+            --card-bg: #1c2434;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --border-color: #2e3a4e;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f7f6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            line-height: 1.6;
         }
+
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 2px solid var(--border-color);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        header p {
+            color: var(--text-muted);
+            margin: 0.5rem 0 0 0;
+        }
+
         .container {
             max-width: 900px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 40px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .general-rules {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border-left: 4px solid var(--accent-blue);
+            padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
         }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #34495e;
-            padding-bottom: 10px;
-            text-align: center;
+
+        .general-rules h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            color: #fff;
         }
-        h2 {
-            color: #2980b9;
-            margin-top: 30px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+
+        .route-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
         }
-        h3 {
-            color: #16a085;
+
+        .route-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
-        .page-section {
-            margin-bottom: 40px;
-            padding: 20px;
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            background-color: #fafafa;
-        }
-        .page-number {
+
+        .route-title {
+            font-size: 1.4rem;
             font-weight: bold;
-            color: #7f8c8d;
-            text-transform: uppercase;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-            display: block;
+            margin: 0;
+            color: #fff;
         }
-        .image-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid #bdc3c7;
-            border-radius: 4px;
-        }
-        .important-note {
-            background-color: #ffeaa7;
-            border-left: 5px solid #fdcb6e;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 4px;
-        }
-        .deviation-alert {
-            color: #d63031;
-            font-weight: bold;
-        }
+
         .payout {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
             font-weight: bold;
-            color: #27ae60;
+            font-size: 0.95rem;
         }
-        ul {
-            padding-left: 20px;
+
+        .instruction-step {
+            margin-bottom: 1rem;
         }
-        li {
-            margin-bottom: 8px;
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .badge-fly { background-color: #7c3aed; color: #fff; }
+        .badge-heal { background-color: #db2777; color: #fff; }
+        .badge-action { background-color: #2563eb; color: #fff; }
+
+        .deviation {
+            color: var(--accent-red);
+            font-weight: 600;
+        }
+
+        .map-placeholder {
+            background-color: #0f172a;
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder::before {
+            content: "🗺️ Vista del Mapa en PDF";
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #475569;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+    <header>
+        <h1>Guía de Trainer Rerun: Mamoswine</h1>
+        <p>Réplica de la ruta de 1 hora de HolyBrocolli adaptada por Cadoiz</p>
+    </header>
 
-    <h1>Cadoiz's Trainer Rerun Mamoswine Guide</h1>
-    
-    <div class="page-section" style="background-color: #edf2f7;">
-        <h3>Contenido de la Guía</h3>
-        <ul>
-            <li><strong>Parte 1</strong> - Introducción</li>
-            <li><strong>Parte 2</strong> - Mamoswine Build (IVs, EVs, nature, ability, moves, item)</li>
-            <li><strong>Parte 3</strong> - Acquisition (How to get one)</li>
-            <li><strong>Parte 4</strong> - Trainer Rerun Route (Follow along with pictures!)</li>
-        </ul>
-    </div>
-
-    <div class="page-section">
-        <span class="page-number">Página 1</span>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img1.jpg" alt="Route 9 Shopping Mall Lobby Map" onerror="this.src='https://via.placeholder.com/800x400?text=Mapa+Pagina+1'">
-        </div>
-        <p><strong>Route:</strong> This route is based off of HolyBrocolli's [1 hour] Trainer Rerun guide. I simply replicate the same route and specify the mons that require EQ or Superpower.</p>
+    <div class="container">
         
-        <div class="important-note">
-            <p><strong>Default Move:</strong> By default use <strong>Icicle Spear</strong>. <span class="deviation-alert">I will specify (generally in color red) when to deviate from Icicle Spear.</span></p>
-        </div>
-
-        <h3>Route 9 Shopping Mall</h3>
-        <p class="payout">Ganancias: $6120 + $6120</p>
-
-        <h3>Route 10</h3>
-        <p class="payout">Ganancias: $4452 + $5280 + $4452 + $5280</p>
-    </div>
-
-    <div class="page-section">
-        <span class="page-number">Página 2</span>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img2.jpg" alt="Route 10 Map Guide" onerror="this.src='https://via.placeholder.com/800x300?text=Mapa+Route+10'">
-        </div>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img3.jpg" alt="Route 13 Map Guide" onerror="this.src='https://via.placeholder.com/800x300?text=Mapa+Route+13'">
-        </div>
-        <p class="deviation-alert">Strat: EQ on Alommola, trainer marked in red.</p>
-
-        <h3>Route 13</h3>
-        <p class="payout">Ganancias: $8100 + $8100</p>
-        
-        <p><strong>Action:</strong> Fly to Veilstone City and bike South to Route 214.</p>
-        <h3>Route 214</h3>
-        <p class="payout">Ganancias: $9000</p>
-    </div>
-
-    <div class="page-section">
-        <span class="page-number">Página 3</span>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img4.jpg" alt="Route 214 Map Guide" onerror="this.src='https://via.placeholder.com/400x500?text=Mapa+Route+214'">
-        </div>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img5.jpg" alt="Route 215 Map Guide" onerror="this.src='https://via.placeholder.com/400x300?text=Mapa+Route+215'">
-        </div>
-        <p><strong>Action:</strong> Fly back to Veilstone City &rarr; <strong>HEAL</strong>.</p>
-        
-        <h3>Route 215</h3>
-        <p class="payout">Ganancias: $4704 + $4704</p>
-        <p>Nota del mapa: 8</p>
-
-        <p><strong>Action:</strong> Fly to Hearthome City and bike South to Route 212.</p>
-        <h3>Route 212</h3>
-        <p class="payout">Ganancias: $6000 + $5880 + $6000 + $6000</p>
-    </div>
-
-    <div class="page-section">
-        <span class="page-number">Página 4</span>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img6.jpg" alt="Route 212 Mansion Map Guide" onerror="this.src='https://via.placeholder.com/400x800?text=Mapa+Route+212+Mansion'">
-        </div>
-        <p style="font-size: 0.85em; color: #555;">Referencias: 1000, 5000, 90000, ১০০, 0000, CO</p>
-        <p class="deviation-alert">Strat: Here use EQ on all mons, trainer marked in red.</p>
-
-        <p><strong>Action:</strong> Fly to Sunyshore City and bike West to Route 222.</p>
-        <h3>Route 222</h3>
-        <p class="payout">Ganancias: $6360</p>
-    </div>
-
-    <div class="page-section">
-        <span class="page-number">Página 5</span>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img7.jpg" alt="Route 222 Coast Map Guide" onerror="this.src='https://via.placeholder.com/800x300?text=Mapa+Route+222+Coast'">
-        </div>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img8.jpg" alt="Route 226 Map Guide" onerror="this.src='https://via.placeholder.com/800x300?text=Mapa+Route+226'">
-        </div>
-        <p>Nota del mapa: T</p>
-        
-        <p><strong>Action:</strong> Fly to Survival Area and bike East to Route 226.</p>
-        <h3>Route 226</h3>
-        <p class="payout">Ganancias: $5568</p>
-
-        <p><strong>Action:</strong> Fly back to Survival Area &rarr; <strong>HEAL</strong> &rarr; Route 225.</p>
-        <h3>Route 225</h3>
-        <p class="payout">Ganancias: $5472 + $5472 + $5472 + $5220</p>
-    </div>
-
-    <div class="page-section">
-        <span class="page-number">Página 6</span>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img9.jpg" alt="Route 225 Detailed Map Guide" onerror="this.src='https://via.placeholder.com/400x800?text=Mapa+Route+225'">
-        </div>
-        <div class="important-note">
+        <div class="general-rules">
+            <h2>Reglas Generales de la Ruta</h2>
             <ul>
-                <li><strong class="deviation-alert">Trainer 1:</strong> Superpower Aggron and Hariyama (holding air balloon)</li>
-                <li><strong class="deviation-alert">Trainer 2:</strong> EQ miltank</li>
+                <li>Por defecto, utiliza siempre <strong style="color: #38bdf8;">Icicle Spear (Carámbanos)</strong>.</li>
+                <li>Las desviaciones y movimientos especiales como Terremoto (EQ) o Fuerza Bruta (Superpower) se detallan específicamente.</li>
             </ul>
         </div>
 
-        <p><strong>Action:</strong> Fly to Celestic Town and bike East to Route 210.</p>
-        <h3>Route 210</h3>
-        <p class="payout">Ganancias: $6240 + $4896 + $6000 + $4800</p>
+        <div class="grid">
+            <!-- Bloque 1 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <div class="route-title">Ruta 9 (Shopping Mall)</div>
+                    <div class="payout">$12,240</div>
+                </div>
+                <div class="instruction-step">
+                    <p>Combates: $6120 + $6120</p>
+                </div>
+                <div class="map-placeholder"></div>
+            </div>
+
+            <!-- Bloque 2 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <div class="route-title">Ruta 10</div>
+                    <div class="payout">$19,464</div>
+                </div>
+                <div class="instruction-step">
+                    <p>Combates: $4452 + $5280 + $4452 + $5280</p>
+                    <p class="deviation">⚠️ Desviación: Usa Terremoto (EQ) contra Alomomola (entrenador marcado en rojo en el mapa).</p>
+                </div>
+                <div class="map-placeholder"></div>
+            </div>
+
+            <!-- Bloque 3 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <div class="route-title">Ruta 13</div>
+                    <div class="payout">$16,200</div>
+                </div>
+                <div class="instruction-step">
+                    <p>Combates: $8100 + $8100</p>
+                </div>
+                <div class="map-placeholder"></div>
+            </div>
+
+            <!-- Bloque 4 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <div class="route-title">Ruta 214</div>
+                    <div class="payout">$9,000</div>
+                </div>
+                <div class="instruction-step">
+                    <p><span class="badge badge-fly">Volar</span> Ciudad Porcelana (Veilstone City) y avanzar en bicicleta hacia el Sur.</p>
+                </div>
+                <div class="map-placeholder"></div>
+            </div>
+
+            <!-- Bloque 5 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <div class="route-title">Ruta 215</div>
+                    <div class="payout">$9,408</div>
+                </div>
+                <div class="instruction-step">
+                    <p><span class="badge badge-fly">Volar</span> de regreso a Ciudad Porcelana.</p>
+                    <p><span class="badge badge-heal">Curar</span> En el Centro Pokémon.</p>
+                    <p>Combates: $4704 + $4704</p>
+                </div>
+                <div class="map-placeholder"></div>
+            </div>
+
+            <!-- Bloque 6 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <div class="route-title">Ruta 212</div>
+                    <div class="payout">$23,880</div>
+                </div>
+                <div class="instruction-step">
+                    <p><span class="badge badge-fly">Volar</span> Ciudad Corazón (Hearthome City) y avanzar en bicicleta hacia el Sur.</p>
+                    <p>Combates: $6000 + $5880 + $6000 + $6000</p>
+                    <p class="deviation">⚠️ Desviación: Usa Terremoto (EQ) contra todos los Pokémon del entrenador marcado en rojo.</p>
+                </div>
+                <div class="map-placeholder"></div>
+            </div>
+
+            <!-- Bloque 7 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <div class="route-title">Ruta 222</div>
+                    <div class="payout">$6,360</div>
+                </div>
+                <div class="instruction-step">
+                    <p><span class="badge badge-fly">Volar</span> Ciudad Marina (Sunyshore City) y avanzar en bicicleta hacia el Oeste.</p>
+                </div>
+                <div class="map-placeholder"></div>
+            </div>
+
+            <!-- Bloque 8 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <div class="route-title">Ruta 226</div>
+                    <div class="payout">$5,568</div>
+                </div>
+                <div class="instruction-step">
+                    <p><span class="badge badge-fly">Volar</span> Zona de Combate / Sobrevivencia (Survival Area) y avanzar hacia el Este.</p>
+                </div>
+                <div class="map-placeholder"></div>
+            </div>
+
+            <!-- Bloque 9 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <div class="route-title">Ruta 225</div>
+                    <div class="payout">$21,636</div>
+                </div>
+                <div class="instruction-step">
+                    <p><span class="badge badge-fly">Volar</span> de vuelta a Zona Sobrevivencia y <span class="badge badge-heal">Curar</span>.</p>
+                    <p>Combates: $5472 + $5472 + $5472 + $5220</p>
+                    <p class="deviation">⚠️ Entrenador 1: Fuerza Bruta (Superpower) contra Aggron y Hariyama (lleva Globo Helio).</p>
+                    <p class="deviation">⚠️ Entrenador 2: Terremoto (EQ) contra Miltank.</p>
+                </div>
+                <div class="map-placeholder"></div>
+            </div>
+
+            <!-- Bloque 10 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <div class="route-title">Ruta 210 (Desde Celestic)</div>
+                    <div class="payout">$21,936</div>
+                </div>
+                <div class="instruction-step">
+                    <p><span class="badge badge-fly">Volar</span> Pueblo Celestic y avanzar hacia el Este.</p>
+                    <p><span class="badge badge-action">Defog</span> Usa Despejar antes del primer combate.</p>
+                    <p>Combates: $6240 + $4896 + $6000 + $4800</p>
+                    <p class="deviation">⚠️ Combate Doble (Rojo): Icicle Spear a Gyarados y Raichu (Globo Helio), Terremoto (EQ) al resto.</p>
+                </div>
+                <div class="map-placeholder"></div>
+            </div>
+
+            <!-- Bloque 11 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <div class="route-title">Ruta 210 (Desde Solaceon)</div>
+                    <div class="payout">$7,896</div>
+                </div>
+                <div class="instruction-step">
+                    <p><span class="badge badge-fly">Volar</span> Pueblo Sosiego (Solaceon Town) y avanzar hacia el Norte.</p>
+                    <p class="deviation">⚠️ Combate Doble: Usa Terremoto (EQ) contra todos.</p>
+                </div>
+                <div class="map-placeholder"></div>
+            </div>
+
+            <!-- Bloque 12 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <div class="route-title">Ruta 229 & 228</div>
+                    <div class="payout">$33,144</div>
+                </div>
+                <div class="instruction-step">
+                    <p><span class="badge badge-fly">Volar</span> Área de Descanso (Resort Area) y <span class="badge badge-heal">Curar</span>. Seguir al Norte.</p>
+                    <p>Ruta 229: $5472 + $5472 | Ruta 228: $5664 + $5310 + $5568 + $5568</p>
+                    <p style="color: var(--accent-orange);">🍊 Nota: Salta (Skip) al entrenador naranja.</p>
+                    <p class="deviation">⚠️ Entrenador 1: EQ a Poliwrath y Empoleon.</p>
+                    <p class="deviation">⚠️ Entrenador 2: EQ a Torkoal.</p>
+                    <p class="deviation">⚠️ Entrenador 3: EQ a Empoleon, Canto Helado (Ice Shard) a Gengar.</p>
+                </div>
+                <div class="map-placeholder"></div>
+            </div>
+        </div>
+
+        <!-- Gimnasio -->
+        <div class="route-card" style="border-left: 4px solid #38bdf8;">
+            <div class="route-header">
+                <div class="route-title">🏢 Gimnasio de Ciudad Inverna (Snowpoint Gym)</div>
+                <div class="payout">$35,640</div>
+            </div>
+            <div class="instruction-step">
+                <p><span class="badge badge-fly">Volar</span> Ciudad Inverna y <span class="badge badge-heal">Curar</span>.</p>
+                <p>Combates: 6 entrenadores x $5940</p>
+                <ul>
+                    <li class="deviation">2do entrenador (Rojo): Glalie requiere EQ (solo bajo granizo/nieve). Usa Canto Helado (Ice Shard) contra Gengar.</li>
+                    <li class="deviation">4to entrenador (Azul): Slowbro requiere Terremoto (EQ).</li>
+                </ul>
+            </div>
+            <div class="map-placeholder"></div>
+        </div>
+
     </div>
 
-    <div class="page-section">
-        <span class="page-number">Página 7</span>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img10.jpg" alt="Route 210 Foggy Area Map Guide" onerror="this.src='https://via.placeholder.com/800x250?text=Mapa+Route+210+Fog'">
-        </div>
-        <p><strong>Note:</strong> Use <strong>Defog</strong> before first battle.</p>
-        <div class="important-note">
-            <p><strong class="deviation-alert">Double battle (trainers marked in red):</strong> Icicle spear gyarados and raichu (holding air balloon), EQ rest.</p>
-            <p style="color: #7f8c8d; font-style: italic;">* Poor pidgey will die, but it's ok.</p>
-        </div>
-
-        <p><strong>Action:</strong> Fly to Solaceon Town and bike North back to Route 210.</p>
-        <h3>Route 210 (North Section)</h3>
-        <p class="payout">Ganancias: $7896</p>
-    </div>
-
-    <div class="page-section">
-        <span class="page-number">Página 8</span>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img11.jpg" alt="Route 210 North Map Guide" onerror="this.src='https://via.placeholder.com/500x600?text=Mapa+Route+210+North'">
-        </div>
-        <div class="important-note">
-            <p><strong class="deviation-alert">Double Battle:</strong> EQ all.</p>
-        </div>
-
-        <p><strong>Action:</strong> Fly to Resort Area &rarr; <strong>HEAL</strong> &rarr; Route 229.</p>
-        <h3>Route 229</h3>
-        <p class="payout">Ganancias: $5472 + $5472</p>
-    </div>
-
-    <div class="page-section">
-        <span class="page-number">Página 9</span>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img12.jpg" alt="Route 229 Map Guide" onerror="this.src='https://via.placeholder.com/800x250?text=Mapa+Route+229'">
-        </div>
-        <p><strong>Action:</strong> Keep going North into Route 228.</p>
-        <h3>Route 228</h3>
-        <p class="payout">Ganancias: $5664 + $5310 + $5568 + $5568</p>
-    </div>
-
-    <div class="page-section">
-        <span class="page-number">Página 10</span>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img13.jpg" alt="Route 228 Map" onerror="this.src='https://via.placeholder.com/400x800?text=Mapa+Route+228'">
-        </div>
-        <p style="font-size: 0.85em; color: #555;">Referencias: 2, S, 19</p>
-        <p><strong>Note:</strong> Skip the orange trainer - originally used in HolyBrocolli's document.</p>
-        
-        <div class="important-note">
-            <ul>
-                <li><strong class="deviation-alert">Trainer 1:</strong> EQ Poliwrath, Empoleon</li>
-                <li><strong class="deviation-alert">Trainer 2:</strong> EQ Torkoal</li>
-                <li><strong class="deviation-alert">Trainer 3:</strong> EQ Empoleon, Ice Shard Gengar</li>
-            </ul>
-        </div>
-
-        <p><strong>Action:</strong> Keep going North into Route 227.</p>
-        <h3>Route 227</h3>
-        <p class="payout">Ganancias: $5856 + $5400</p>
-    </div>
-
-    <div class="page-section">
-        <span class="page-number">Páginas 11 & 12</span>
-        <p><strong>Action:</strong> Fly to Snowpoint City &rarr; <strong>HEAL</strong>.</p>
-        
-        <h3>Snowpoint City Gym</h3>
-        <p class="payout">Ganancias: $5940 + $5940 + $5940 + $5940 + $5940 + $5940</p>
-
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img14.jpg" alt="Snowpoint Exterior/Path Map" onerror="this.src='https://via.placeholder.com/400x500?text=Mapa+Gym+Exterior'">
-        </div>
-        <div class="image-container">
-            <img src="https://remotaimagen.com/storage/img15.jpg" alt="Snowpoint Gym Ice Puzzle Guide" onerror="this.src='https://via.placeholder.com/500x400?text=Mapa+Gym+Puzzle'">
-        </div>
-
-        <div class="important-note">
-            <p><strong>Gym Trainers Strategy:</strong></p>
-            <ul>
-                <li>The <strong>2nd guy (in red)</strong> has a <strong>Glalie</strong> which <span class="deviation-alert">needs EQ only in snow</span>.</li>
-                <li>The <strong>2nd guy</strong> also has <strong>Gengar</strong> (<span class="deviation-alert">use Ice Shard</span>).</li>
-                <li>The <strong>4th guy (in blue)</strong> has a <strong>Slowbrow</strong> which <span class="deviation-alert">needs EQ</span>.</li>
-            </ul>
-        </div>
-    </div>
-
-</div>
+    <footer>
+        Guía estructurada en formato HTML limpio para el uso en herramientas y bases de datos de PokeMMO.
+    </footer>
 
 </body>
 </html>
