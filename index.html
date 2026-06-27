@@ -80,7 +80,7 @@
             border-radius: 6px;
             margin-bottom: 30px;
             font-size: 0.9rem;
-            box-shadow: inset 0 0 10px rgba(ff, 0, 55, 0.1);
+            box-shadow: inset 0 0 10px rgba(255, 0, 55, 0.1);
         }
 
         .route-section {
@@ -182,7 +182,6 @@
             max-width: 100%;
             height: auto;
             border-radius: 6px;
-            filter: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         ul {
@@ -214,87 +213,92 @@
         <span style="color:var(--neon-red); font-weight:bold;">[AVISO DEL SISTEMA]</span> Comando por defecto: Ejecutar siempre <strong>Carámbanos (Icicle Spear)</strong>. Las anulaciones críticas de comando se despliegan abajo en codificación roja.
     </div>
 
+    <!-- SECCIÓN 01 -->
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">01 // Centro Comercial Ruta 9 & Ruta 10</div>
-            <div class="payout">CRÉDITOS: +$12,240 // +$19,464</div>
+            <div class="route-title">Centro Comercial Ruta 9</div>
+            <div class="payout">CRÉDITOS: +$12,240</div>
         </div>
         <p><strong>Área Comercial:</strong> $6,120 + $6,120</p>
-        <p><strong>Subsector Ruta 10:</strong> $4,452 + $5,280 + $4,452 + $5,280</p>
         <div class="map-container">
-            <img src="ruta1.png">
+            <img src="ruta1.png" alt="Mapa Ruta 9">
         </div>
     </div>
 
+    <!-- SECCIÓN 02 -->
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">02 // Interconexión Ruta 10 & Ruta 13</div>
+            <div class="route-title">Ruta 10 y Ruta 13</div>
             <div class="payout">CRÉDITOS: +$16,200</div>
         </div>
         <div class="strat">
             <div class="strat-title">[MODIFICACIÓN DE COMANDO]</div>
-            Inyectar Terremoto (EQ) contra la unidad Alomomola (vector marcado en rojo).
+            Usa Terremoto en Alomomola (NPC marcado en rojo).
         </div>
-        <p><strong>Subsector Ruta 13:</strong> $8,100 + $8,100</p>
+        <p><strong>Ruta 13:</strong> $8,100 + $8,100</p>
         <div class="map-container">
-            <img src="Ruta10.png">
+            <img src="Ruta10.png" alt="Mapa Ruta 10">
         </div>
         <div class="map-container" style="margin-top: 15px;">
-            <img src="Ruta13.png">
+            <img src="Ruta13.png" alt="Mapa Ruta 13">
         </div>
     </div>
 
+    <!-- SECCIÓN 03 -->
     <div class="route-section">
         <div class="route-header">
             <div class="route-title">03 // Cuadrantes Ruta 214 & Ruta 215</div>
             <div class="payout">CRÉDITOS: +$9,000 // +$9,408</div>
         </div>
-        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Ciudad Rocavelo (Veilstone) &rarr; Desplazamiento Sur por Ruta 214.</p>
-        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Retorno a Rocavelo &rarr; <span class="badge badge-heal">REINICIAR HP/PP</span>. Transición a Ruta 215 ($4,704 + $4,704).</p>
+        <p><span class="badge badge-fly">Usar Vuelo a</span> Ciudad Rocavelo &rarr; ir al Sur por Ruta 214.</p>
+        <p><span class="badge badge-fly">Usar Vuelo</span> Otra vez a Rocavelo &rarr; <span class="badge badge-heal">Curar Salud/PP</span>. Despues ir a la Ruta 215 por 2 NPC ($4,704 + $4,704).</p>
         <div class="map-container">
-            <img src="Ruta214.png">
+            <img src="Ruta214.png" alt="Mapa Ruta 214">
         </div>
         <div class="map-container" style="margin-top: 15px;">
-            <img src="Ruta215.png">
+            <img src="Ruta215.png" alt="Mapa Ruta 215">
         </div>
     </div>
 
+    <!-- SECCIÓN 04 -->
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">04 // Sector Mansión Ruta 212 & Ruta 222</div>
+            <div class="route-title">Ruta De La Mansión Ruta 212 & Ruta 222</div>
             <div class="payout">CRÉDITOS: +$23,880 // +$6,360</div>
         </div>
-        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Ciudad Corazón (Hearthome) &rarr; Vector Sur por Ruta 212 ($6,000 + $5,880 + $6,000 + $6,000).</p>
+        <p><span class="badge badge-fly">Usar Vuelo</span> Ciudad Corazón &rarr; Ir por el Sur por Ruta 212 ($6,000 + $5,880 + $6,000 + $6,000).</p>
         <div class="strat">
-            <div class="strat-title">[MODIFICACIÓN DE COMANDO]</div>
-            Saturar con Terremoto (EQ) contra todos los objetivos del entrenador marcado en rojo.
+            <div class="strat-title">Usar el movimiento terremoto en el npc marcado en rojo</div>
+            Asegurar el daño en el objetivo prioritario.
         </div>
-        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Ciudad Marina (Sunyshore) &rarr; Vector Oeste por Ruta 222 ($6,360).</p>
+        <p><span class="badge badge-fly">Usar Vuelo a</span> Ciudad Marina &rarr; ir Oeste por Ruta 222 ($6,360).</p>
         <div class="map-container">
-            <img src="Ruta212.png">
+            <img src="Ruta212.png" alt="Mapa Ruta 212">
         </div>
     </div>
 
+    <!-- SECCIÓN 05 -->
     <div class="route-section">
         <div class="route-header">
-            <div class="route-title">05 // Zonas Costeras Ruta 222 & Ruta 226</div>
+            <div class="route-title">05 // Zona Sobrevivir Ruta 222</div>
             <div class="payout">CRÉDITOS: +$5,568</div>
         </div>
         <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Zona de Sobrevivencia (Survival Area) &rarr; Vector Este hacia Ruta 226 ($5,568).</p>
         <div class="map-container">
-            <img src="Ruta222.png">
+            <img src="Ruta222.png" alt="Mapa Ruta 222">
         </div>
         <div class="map-container" style="margin-top: 15px;">
-            <img src="Ruta226.png">
+            <img src="Ruta226.png" alt="Mapa Ruta 226">
         </div>
     </div>
 
+    <!-- SECCIÓN 06 -->
     <div class="route-section">
         <div class="route-header">
             <div class="route-title">06 // Cuadrante Ruta 225</div>
             <div class="payout">CRÉDITOS: +$21,636 TOT</div>
         </div>
-        <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Zona de Sobrevivencia &rarr; <span class="badge badge-heal">REINICIAR HP/PP</span> &rarr; Ruta 225.</p>
+        <p><span class="badge badge-fly">Usar Vuelo</span> Zona de Sobrevivir &rarr; <span class="badge badge-heal">Curar HP/PP</span> &rarr; Ruta 225.</p>
         <div class="strat">
             <div class="strat-title">[CÓDIGOS DE COMBATE INDIVIDUAL]</div>
             <ul>
@@ -303,10 +307,11 @@
             </ul>
         </div>
         <div class="map-container">
-            <img src="Ruta225.png">
+            <img src="Ruta225.png" alt="Mapa Ruta 225">
         </div>
     </div>
 
+    <!-- SECCIÓN 07 -->
     <div class="route-section">
         <div class="route-header">
             <div class="route-title">07 // Ruta 210 // Anomalía de Niebla</div>
@@ -318,10 +323,11 @@
             Fijar Carámbanos (Icicle Spear) en Gyarados y Raichu (Alerta: Globo Helio). Liberar Terremoto (EQ) para limpiar el resto de objetivos. (*Baja aliada: Pidgey será eliminado; daño colateral aceptable).
         </div>
         <div class="map-container">
-            <img src="Ruta210.png">
+            <img src="Ruta210.png" alt="Mapa Ruta 210">
         </div>
     </div>
 
+    <!-- SECCIÓN 08 -->
     <div class="route-section">
         <div class="route-header">
             <div class="route-title">08 // Ruta 210 Norte & Sector Especial 229</div>
@@ -330,13 +336,14 @@
         <p><span class="badge badge-fly">EJECUTAR VOLAR</span> Pueblo Sosiego (Solaceon) &rarr; Vector Norte. <strong>Combate Dúo:</strong> Terremoto (EQ) generalizado.</p>
         <p>Posterior: <span class="badge badge-fly">EJECUTAR VOLAR</span> Área de Descanso &rarr; <span class="badge badge-heal">REINICIAR HP/PP</span> &rarr; Ruta 229 ($5,472 + $5,472).</p>
         <div class="map-container">
-            <img src="Sosiegocombatedoble.png">
+            <img src="Sosiegocombatedoble.png" alt="Mapa Sosiego">
         </div>
         <div class="map-container" style="margin-top: 15px;">
-            <img src="Ruta229.png">
+            <img src="Ruta229.png" alt="Mapa Ruta 229">
         </div>
     </div>
 
+    <!-- SECCIÓN 09 -->
     <div class="route-section">
         <div class="route-header">
             <div class="route-title">09 // Ruta 228 // Tormenta de Arena</div>
@@ -352,10 +359,11 @@
             </ul>
         </div>
         <div class="map-container">
-            <img src="Ruta228.png">
+            <img src="Ruta228.png" alt="Mapa Ruta 228">
         </div>
     </div>
 
+    <!-- SECCIÓN 10 -->
     <div class="route-section">
         <div class="route-header">
             <div class="route-title">10 // Red de Gimnasio: Ciudad Inverna</div>
@@ -370,10 +378,10 @@
             </ul>
         </div>
         <div class="map-container">
-            <img src="Ruta227.png">
+            <img src="Ruta227.png" alt="Mapa Ruta 227">
         </div>
         <div class="map-container" style="margin-top: 15px;">
-            <img src="CiudadNieve.png">
+            <img src="CiudadNieve.png" alt="Mapa Ciudad Inverna">
         </div>
     </div>
 
